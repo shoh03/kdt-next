@@ -11,7 +11,7 @@ interface StudentProps {
 
 export default function Students({student}: StudentProps) {
 
-        const {id, name, isPresent} = student
+    const {id, name, isPresent} = student
     return (
         <li className="text-[20px]">
             <p>id: {id}</p>

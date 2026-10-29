@@ -1,3 +1,6 @@
+import { todo } from "node:test";
+import Todos from "./_component/Todo"
+
 export default function page() {
 
     // 할 일 목록 상태 관리
@@ -20,9 +23,17 @@ export default function page() {
         }
     ]
 
+
+    const todoList = todos.map((todo, i) => (
+        <Todos key={i} todo={todo} />
+    ))
+
+    console.log(todoList)
+
     return (
         <>
-            Enter
+            <ul>{todoList}</ul>
+            
         </>
     );
 }
