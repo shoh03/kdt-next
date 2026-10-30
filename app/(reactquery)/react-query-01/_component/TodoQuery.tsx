@@ -1,14 +1,13 @@
-export interface Todo {
-    userId:    number;
-    id:        number;
-    title:     string;
-    completed: boolean;
+import Link from "next/link";
+import { Todo } from "./TodoQueryContainer";
+
+interface TodoQueryProp {
+    todo: Todo
 }
 
-export default function TodoQuery() {
+export default function TodoQuery({todo}: TodoQueryProp) {
+    const {id, title, completed, userId} = todo 
     return (
-        <>
-            Enter
-        </>
+        <Link href={`/react-query-01/${id}`}>{title}</Link>
     );
 }
